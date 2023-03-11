@@ -5,6 +5,19 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: poppinRegular;
+  src: url(../assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: poppinBold;
+  src: url("../assets/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: poppinThin;
+  src: url("../assets/fonts/Poppins-Thin.ttf");
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -13,6 +26,15 @@ img {
 
 .txt-center {
   text-align: center;
+}
+.regular {
+  font-family: poppinRegular;
+}
+.bold {
+  font-family: poppinBold;
+}
+.thin {
+  font-family: poppinThin;
 }
 
 .block {
