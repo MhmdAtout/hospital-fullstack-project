@@ -154,3 +154,37 @@ img {
   padding: 5px 20px;
   border-radius: 15px;
 }
+
+.signin {
+  width: 100vw;
+  height: 90vh;
+}
+
+.signin-img {
+  height: 100%;
+  width: 35%;
+}
+
+.sigin-section {
+  height: 90%;
+  width: 50%;
+  padding: 150px;
+}
+.sigin-title {
+  font-size: 60px;
+}
+.signin-inputs {
+  height: 30%;
+}
+input {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1.5px solid #8d8d8d;
+  background-color: #f3f3f3;
+  outline-style: none;
+}
+input::placeholder {
+  font-family: poppinRegular;
+}
