@@ -96,6 +96,14 @@ img {
 }
 .navbar-content > p {
   font-size: 18px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+.navbar-content > p:hover {
+  background-color: #4200ff;
+  color: white;
+  transition: 0.5s;
 }
 
 .navbar-buttons {
