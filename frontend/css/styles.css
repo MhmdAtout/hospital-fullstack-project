@@ -11,6 +11,10 @@ img {
   object-fit: contain;
 }
 
+.txt-center {
+  text-align: center;
+}
+
 .block {
   display: block;
 }
