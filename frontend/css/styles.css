@@ -54,3 +54,38 @@ img {
 .ai-end {
   align-items: flex-end;
 }
+
+.navbar {
+  height: 10vh;
+  width: 100vw;
+}
+
+.navbar-logo {
+  width: 10%;
+  font-size: 28px;
+}
+
+.navbar-content {
+  width: 40%;
+}
+.navbar-content > p {
+  font-size: 18px;
+}
+
+.navbar-buttons {
+  width: 20%;
+}
+.filled {
+  color: white;
+}
+.layout {
+  color: #4200ff;
+  border: solid 2px #4200ff;
+}
+
+.btn {
+  width: 140px;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 18px;
+}
