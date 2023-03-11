@@ -13,9 +13,12 @@
 .txt-grey {
   color: #aaa;
 }
+.txt-greyer {
+  color: #8f8f8f;
+}
 
 .bg-grey {
-  background-color: #f3f3f3;
+  background-color: #d7d7d7;
 }
 
 /* DEDEDE */
