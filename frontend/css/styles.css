@@ -115,3 +115,20 @@ img {
   border-radius: 15px;
   font-size: 18px;
 }
+
+.home {
+  width: 100vw;
+  height: 90vh;
+  padding: 50px;
+}
+
+.home-content {
+  width: 35%;
+  height: 40%;
+}
+.home-content-title {
+  font-size: 50px;
+}
+.home-content-subtitle {
+  font-size: 20px;
+}
