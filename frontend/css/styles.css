@@ -17,6 +17,10 @@
   font-family: poppinThin;
   src: url("../assets/fonts/Poppins-Thin.ttf");
 }
+@font-face {
+  font-family: poppinMedium;
+  src: url("../assets/fonts/Poppins-Medium.ttf");
+}
 
 img {
   width: 100%;
@@ -35,6 +39,9 @@ img {
 }
 .thin {
   font-family: poppinThin;
+}
+.medium {
+  font-family: poppinMedium;
 }
 
 .block {
@@ -96,14 +103,10 @@ img {
 }
 .navbar-content > p {
   font-size: 18px;
-  border-radius: 5px;
   padding: 5px 10px;
-  transition: 0.5s;
 }
 .navbar-content > p:hover {
-  background-color: #4200ff;
-  color: white;
-  transition: 0.5s;
+  border-bottom: 2px solid #4200ff;
 }
 
 .navbar-buttons {
@@ -137,6 +140,15 @@ img {
 .home-content-title {
   font-size: 50px;
 }
+.we-care {
+  font-size: 60px;
+}
 .home-content-subtitle {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.health {
+  color: white;
+  padding: 5px 20px;
+  border-radius: 15px;
 }
