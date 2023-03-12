@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/colors.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Admin</title>
+  </head>
+  <body>
+    <div class="wrapper flex jc-center ai-center">
+      <div class="sidebar flex column jc-start ai-start">
+        <div class="sidebar-title">
+          <p class="bold txt-blue">Hospitals</p>
+        </div>
+        <div class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/dashboard.svg" alt="" />
+          <p class="bold txt-black">Home</p>
+        </div>
+        <div class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/download-grey.svg" alt="" />
+          <p class="regular txt-greyer">Invoice</p>
+        </div>
+        <div class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/profile-grey.svg" alt="" />
+          <p class="regular txt-greyer">Profile</p>
+        </div>
+        <div class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/logout-grey.svg" alt="" />
+          <p class="regular txt-greyer">Logout</p>
+        </div>
+      </div>
+
+      <div class="page flex column jc-sb ai-start">
+        <div class="page-title">
+          <p class="txt-black bold">
+            Welcome, <span id="fill_name" class="txt-blue"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>
