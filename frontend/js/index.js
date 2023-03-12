@@ -22,3 +22,27 @@ home_btn.addEventListener("click", () => {
   home_page.classList.remove("hide");
   home_page.classList.add("flex");
 });
+
+login_btn.addEventListener("click", () => {
+  const signin_body = new FormData();
+  signin_body.append("email", email.value);
+  signin_body.append("password", password.value);
+
+  axios({
+    method: "post",
+    url: `${baseURL}/signin.php`,
+    data: signin_body,
+  }).then((res) => {
+    console.log(res.data);
+    if (res.data.user_type == 3) {
+      window.location.href = "./pages/patient.html";
+      localStorage.setItem("id", res.data.id);
+    } else if (res.data.user_type == 2) {
+      window.location.href = "./pages/employee.html";
+      localStorage.setItem("id", res.data.id);
+    } else {
+      window.location.href = "./pages/admin.html";
+      localStorage.setItem("id", res.data.id);
+    }
+  });
+});
