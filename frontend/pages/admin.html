@@ -32,11 +32,44 @@
         </div>
       </div>
 
-      <div class="page flex column jc-sb ai-start">
+      <div class="page flex column jc-sa ai-start">
         <div class="page-title">
           <p class="txt-black bold">
             Welcome, <span id="fill_name" class="txt-blue"></span>
           </p>
+        </div>
+        <div class="add-user">
+          <div class="add-user">
+            <p>Add user</p>
+          </div>
+          <div class="add-user-content">
+            <div class="user">
+              <select name="users_to_assign" id="patient_to_assign"></select>
+            </div>
+            <div class="hospital">
+              <select
+                name="hospital_toassign_to"
+                id="hospital_toassign_to"
+              ></select>
+            </div>
+            <div id="assign_btn" class="assign_btn">
+              <button>Assign Patient</button>
+            </div>
+          </div>
+          <div class="add-user-content">
+            <div class="user">
+              <select name="users_to_assign" id="employee_to_assign"></select>
+            </div>
+            <div class="hospital">
+              <select
+                name="hospital_toassign_to"
+                id="hospital_toassign_to"
+              ></select>
+            </div>
+            <div id="assign_btn" class="assign_btn">
+              <button>Assign Employee</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
