@@ -188,3 +188,47 @@ input {
 input::placeholder {
   font-family: poppinRegular;
 }
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+.sidebar {
+  width: 20%;
+  height: 100%;
+  padding-top: 50px;
+  padding-left: 50px;
+  box-shadow: #8d8d8d 0 0 20px;
+}
+.sidebar > * {
+  margin: 10px 0;
+  height: 5%;
+  width: 100%;
+}
+.sidebar-element {
+  cursor: pointer;
+}
+.sidebar-element > img {
+  width: 20%;
+}
+.sidebar-title {
+  margin-bottom: 150px;
+}
+.sidebar-title > p {
+  width: 100%;
+  height: 100%;
+  padding-left: 30px;
+  font-size: 40px;
+}
+.sidebar-element > p {
+  width: 80%;
+  height: 100%;
+  padding-left: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.sidebar-element > p:hover {
+  border-right: 5px solid #4200ff;
+}
