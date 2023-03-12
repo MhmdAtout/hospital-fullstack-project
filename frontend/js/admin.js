@@ -58,13 +58,27 @@ axios({
 
 assign_pt_btn.addEventListener("click", () => {
   let patient_data = new FormData();
-  let service_id = hospital_toassign_to[0].value;
+  let hospitals_id = hospital_toassign_to[0].value;
   patient_data.append("user_id", patient_to_assign.value);
-  patient_data.append("hospital_id", service_id);
+  patient_data.append("hospital_id", hospitals_id);
   axios({
     method: "post",
     url: `${baseURL}/join_patient.php`,
     data: patient_data,
+  }).then((res) => {
+    console.log(res.data);
+  });
+});
+
+assign_employee_btn.addEventListener("click", () => {
+  let employee_data = new FormData();
+  let hospitals_id = hospital_toassign_to[1].value;
+  employee_data.append("user_id", employee_to_assign.value);
+  employee_data.append("hospital_id", hospitals_id);
+  axios({
+    method: "post",
+    url: `${baseURL}/join_employee.php`,
+    data: employee_data,
   }).then((res) => {
     console.log(res.data);
   });
