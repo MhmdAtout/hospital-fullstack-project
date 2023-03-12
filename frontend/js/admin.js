@@ -1,7 +1,7 @@
 const patient_to_assign = document.getElementById("patient_to_assign");
 const employee_to_assign = document.getElementById("employee_to_assign");
-const hospital_toassign_to = document.getElementById("hospital_toassign_to");
-
+const hospital_toassign_to = document.querySelectorAll(".hospital_toassign_to");
+console.log(hospital_toassign_to);
 const assign_pt_btn = document.getElementById("assign_pt_btn");
 const assign_employee_btn = document.getElementById("assign_employee_btn");
 
@@ -22,6 +22,7 @@ axios({
     patient_to_assign.append(option);
   });
 });
+
 axios({
   method: "get",
   url: `${baseURL}/get_employees.php`,
@@ -37,18 +38,20 @@ axios({
     employee_to_assign.append(option);
   });
 });
+
 axios({
   method: "get",
   url: `${baseURL}/get_hospitals.php`,
 }).then((res) => {
   hospitals = res.data.hospitals;
-  console.log(hospitals);
 
-  hospitals.forEach((hospital) => {
-    const option = document.createElement("option");
-    option.value = hospital.id;
-    option.text = `${hospital.name}`;
+  hospital_toassign_to.forEach((element) => {
+    hospitals.forEach((hospital) => {
+      const option = document.createElement("option");
+      option.value = hospital.id;
+      option.text = `${hospital.name}`;
 
-    hospital_toassign_to.append(option);
+      element.append(option);
+    });
   });
 });
