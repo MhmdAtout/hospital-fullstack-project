@@ -16,7 +16,7 @@
         </div>
         <div class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/dashboard.svg" alt="" />
-          <p class="bold txt-black">Dashboard</p>
+          <p class="bold txt-black">Home</p>
         </div>
         <div class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/download-grey.svg" alt="" />
@@ -31,7 +31,54 @@
           <p class="regular txt-greyer">Logout</p>
         </div>
       </div>
-      <div class="page"></div>
+
+      <div class="page flex column jc-sb ai-start">
+        <div class="page-title">
+          <p class="txt-black bold">
+            Welcome, <span id="fill_name" class="txt-blue"></span>
+          </p>
+        </div>
+        <div class="page-content flex jc-center ai-center">
+          <div class="dashboard flex column jc-sb ai-center">
+            <div class="service flex column jc-center ai-center">
+              <div class="service-title">
+                <p>Services</p>
+              </div>
+              <div class="service-content flex jc-center ai-center">
+                <div class="request flex jc-sb ai-center">
+                  <div class="dropdown">
+                    <label for="service-request">Choose a service</label>
+                    <select
+                      name="service-request"
+                      id="available_services"
+                    ></select>
+                  </div>
+                  <div id="request_service_btn" class="service-btn">
+                    <button>
+                      <img src="../assets/images/dashboard-grey.svg" alt="" />
+                    </button>
+                  </div>
+                </div>
+                <div id="user_services" class="view"></div>
+              </div>
+            </div>
+
+            <div class="medication flex column jc-sb ai-center">
+              <label for="service-mdx">Choose medication</label>
+              <select name="service-mdx" id="available_medication"></select>
+              <button id="medication_btn">
+                <img src="../assets/images/dashboard-grey.svg" alt="" />
+              </button>
+            </div>
+            <div class="room flex column jc-center ai-center">psst</div>
+          </div>
+
+          <div class="profile"></div>
+        </div>
+      </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/patient.js"></script>
   </body>
 </html>
