@@ -19,3 +19,18 @@ axios({
     patient_to_assign.append(option);
   });
 });
+axios({
+  method: "get",
+  url: `${baseURL}/get_employees.php`,
+}).then((res) => {
+  employees = res.data.users;
+  console.log(employees);
+
+  employees.forEach((employee) => {
+    const option = document.createElement("option");
+    option.value = employee.id;
+    option.text = `${employee.name}`;
+
+    employee_to_assign.append(option);
+  });
+});
