@@ -17,7 +17,7 @@ axios({
   patients.forEach((patient) => {
     const option = document.createElement("option");
     option.value = patient.id;
-    option.text = `${patient.name}`;
+    option.text = patient.name;
 
     patient_to_assign.append(option);
   });
@@ -33,7 +33,7 @@ axios({
   employees.forEach((employee) => {
     const option = document.createElement("option");
     option.value = employee.id;
-    option.text = `${employee.name}`;
+    option.text = employee.name;
 
     employee_to_assign.append(option);
   });
@@ -49,9 +49,23 @@ axios({
     hospitals.forEach((hospital) => {
       const option = document.createElement("option");
       option.value = hospital.id;
-      option.text = `${hospital.name}`;
+      option.text = hospital.name;
 
       element.append(option);
     });
+  });
+});
+
+assign_pt_btn.addEventListener("click", () => {
+  let patient_data = new FormData();
+  let service_id = hospital_toassign_to[0].value;
+  patient_data.append("user_id", patient_to_assign.value);
+  patient_data.append("hospital_id", service_id);
+  axios({
+    method: "post",
+    url: `${baseURL}/join_patient.php`,
+    data: patient_data,
+  }).then((res) => {
+    console.log(res.data);
   });
 });
