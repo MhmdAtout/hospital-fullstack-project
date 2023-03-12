@@ -2,6 +2,9 @@ const patient_to_assign = document.getElementById("patient_to_assign");
 const employee_to_assign = document.getElementById("employee_to_assign");
 const hospital_toassign_to = document.getElementById("hospital_toassign_to");
 
+const assign_pt_btn = document.getElementById("assign_pt_btn");
+const assign_employee_btn = document.getElementById("assign_employee_btn");
+
 const baseURL = "http://localhost/hospital-fullstack-project/backend";
 
 axios({
