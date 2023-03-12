@@ -34,3 +34,18 @@ axios({
     employee_to_assign.append(option);
   });
 });
+axios({
+  method: "get",
+  url: `${baseURL}/get_hospitals.php`,
+}).then((res) => {
+  hospitals = res.data.hospitals;
+  console.log(hospitals);
+
+  hospitals.forEach((hospital) => {
+    const option = document.createElement("option");
+    option.value = hospital.id;
+    option.text = `${hospital.name}`;
+
+    hospital_toassign_to.append(option);
+  });
+});
