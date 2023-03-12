@@ -7,6 +7,8 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const login_btn = document.getElementById("login_btn");
 
+const baseURL = "http://localhost/hospital-fullstack-project/backend";
+
 signin_btn.addEventListener("click", () => {
   home_page.classList.remove("flex");
   home_page.classList.add("hide");
