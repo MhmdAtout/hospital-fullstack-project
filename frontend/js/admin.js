@@ -4,6 +4,7 @@ const hospital_toassign_to = document.querySelectorAll(".hospital_toassign_to");
 console.log(hospital_toassign_to);
 const assign_pt_btn = document.getElementById("assign_pt_btn");
 const assign_employee_btn = document.getElementById("assign_employee_btn");
+const requests_wrapper = document.getElementById("requests_wrapper");
 
 const baseURL = "http://localhost/hospital-fullstack-project/backend";
 
@@ -81,5 +82,27 @@ assign_employee_btn.addEventListener("click", () => {
     data: employee_data,
   }).then((res) => {
     console.log(res.data);
+  });
+});
+
+axios({
+  method: "get",
+  url: `${baseURL}/get_users_requests.php`,
+}).then((res) => {
+  let requests = res.data.requests;
+  console.log(requests);
+  requests.forEach((request) => {
+    requests_wrapper.innerHTML += `
+              <div class="pt-name">
+                <p>${request.name}</p>
+              </div>
+              <div class="service">
+                <p>${request.title}</p>
+              </div>
+              <div class="buttons">
+                <button id="accept_request_btn">Accept</button>
+                <button id="reject_request_btn">Reject</button>
+              </div>
+      `;
   });
 });
