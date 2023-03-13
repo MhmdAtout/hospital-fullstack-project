@@ -14,7 +14,7 @@
         <div class="sidebar-title">
           <p class="bold txt-blue">Hospitals</p>
         </div>
-        <div class="sidebar-element flex ai-center jc-center">
+        <div id="home_icon" class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/dashboard.svg" alt="" />
           <p class="bold txt-black">Home</p>
         </div>
@@ -22,11 +22,11 @@
           <img src="../assets/images/download-grey.svg" alt="" />
           <p class="regular txt-greyer">Invoice</p>
         </div>
-        <div class="sidebar-element flex ai-center jc-center">
+        <div id="profile_icon" class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/profile-grey.svg" alt="" />
-          <p class="regular txt-greyer">Profile</p>
+          <p class="regular txt-greyer">Add User</p>
         </div>
-        <div class="sidebar-element flex ai-center jc-center">
+        <div id="logout_icon" class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/logout-grey.svg" alt="" />
           <p class="regular txt-greyer">Logout</p>
         </div>
@@ -38,41 +38,74 @@
             Welcome, <span id="fill_name" class="txt-blue"></span>
           </p>
         </div>
-        <div class="add-user">
-          <div class="add-user">
-            <p>Add user</p>
+        <div class="add-user flex column jc-sa">
+          <div class="kpage flex column jc-sa ai-center" id="home_page">
+            <div class="admin-options flex jc-center ai-center">
+              <div class="add-user-content">
+                <div class="user flex column">
+                  <label class="bold" for="users_to_assign"
+                    >Assign Patients</label
+                  >
+                  <select
+                    name="users_to_assign"
+                    id="patient_to_assign"
+                    class="regular txt-black"
+                  ></select>
+                </div>
+                <div class="hospital flex column">
+                  <select
+                    name="hospital_toassign_to"
+                    class="hospital_toassign_to regular txt-black"
+                  ></select>
+                </div>
+                <div id="assign_pt_btn" class="assign_btn">
+                  <button class="filled bg-blue btn bold">
+                    Assign Patient
+                  </button>
+                </div>
+              </div>
+
+              <div class="add-user-content">
+                <div class="user flex column bold">
+                  <label for="users_to_assign">Assign Employees</label>
+                  <select
+                    name="users_to_assign"
+                    id="employee_to_assign"
+                    class="regular txt-black"
+                  ></select>
+                </div>
+                <div class="hospital">
+                  <select
+                    name="hospital_toassign_to"
+                    class="hospital_toassign_to regular txt-black"
+                  ></select>
+                </div>
+                <div id="assign_employee_btn" class="assign_btn">
+                  <button class="filled bg-blue btn bold">
+                    Assign Employee
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="requests_wrapper" id="requests_wrapper"></div>
           </div>
-          <div class="add-user-content">
-            <div class="user">
-              <select name="users_to_assign" id="patient_to_assign"></select>
-            </div>
-            <div class="hospital">
-              <select
-                name="hospital_toassign_to"
-                id="hospital_toassign_to"
-              ></select>
-            </div>
-            <div id="assign_btn" class="assign_btn">
-              <button>Assign Patient</button>
-            </div>
-          </div>
-          <div class="add-user-content">
-            <div class="user">
-              <select name="users_to_assign" id="employee_to_assign"></select>
-            </div>
-            <div class="hospital">
-              <select
-                name="hospital_toassign_to"
-                id="hospital_toassign_to"
-              ></select>
-            </div>
-            <div id="assign_btn" class="assign_btn">
-              <button>Assign Employee</button>
-            </div>
+
+          <div id="profile_page" class="hide column jc-center ai-center">
+            <input type="text" id="add_fullname" placeholder="Full Name" />
+            <input type="text" id="add_email" placeholder="Email" />
+            <input type="password" id="add_password" placeholder="Password" />
+            <input type="text" id="add_dob" placeholder="Date of Birth" />
+            <input type="text" id="add_gender" placeholder="Gender" />
+            <select name="" id="add_usertype"></select>
+            <button id="add_user_btn" class="filled btn bg-blue bold">
+              Add User
+            </button>
+            <p id="result"></p>
           </div>
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../js/admin.js"></script>
   </body>
