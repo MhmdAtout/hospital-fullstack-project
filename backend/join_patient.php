@@ -2,9 +2,25 @@
 
 include("connection.php");
 
+include('./vendor/autoload.php');
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
+$headers = getallheaders();
+$token = $headers['Authorization'];
+$secret_key = "mhmdHospital101";
+
+try {
+    $decoded_token = JWT::decode($token, new Key($secret_key, 'HS256'));
+} catch (Exception $e) {
+    http_response_code(401);
+    exit();
+}
+
 $user_id = $_POST["user_id"];
 $hospital_id = $_POST["hospital_id"];
-$is_active = $_POST["is_active"];
+$is_active = "true";
 $date_joined = date('d-m-y h:i:s');
 
 $query = $mysql -> prepare("SELECT * FROM hospital_users 
