@@ -15,17 +15,19 @@
           <p>Hospitals</p>
         </div>
         <div class="navbar-content flex jc-sb ai-center medium txt-black">
-          <p class="txt-blue">Home</p>
+          <p id="home_btn" class="txt-blue">Home</p>
           <p>Services</p>
           <p>About Us</p>
           <p>Contact Us</p>
         </div>
         <div class="navbar-buttons flex jc-sa ai-center">
-          <button class="btn filled bg-blue regular">Sign in</button>
+          <button id="signin_btn" class="btn filled bg-blue regular">
+            Sign in
+          </button>
         </div>
       </div>
 
-      <div class="home flex jc-center jc-sa ai-center">
+      <div id="home_page" class="home flex jc-center jc-sa ai-center">
         <div class="home-content flex column jc-sa">
           <p class="home-content-title bold">
             <span class="we-care txt-blue">We care</span>
@@ -42,7 +44,7 @@
         </div>
       </div>
 
-      <div class="signin flex jc-center ai-center">
+      <div id="signin_page" class="signin hide jc-center ai-center">
         <div class="signin-img flex jc-center ai-center">
           <img src="./assets/images/signin.svg" alt="" />
         </div>
@@ -51,9 +53,13 @@
             <p>Sign in</p>
           </div>
           <div class="signin-inputs flex column jc-sb">
-            <input type="text" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input id="email" type="text" placeholder="Email" />
+            <input id="password" type="password" placeholder="Password" />
           </div>
+          <button id="login_btn" class="btn filled bg-blue regular">
+            login
+          </button>
+          <p class="bold txt-black" id="error_msg"></p>
           <div class="sigin-other">
             <p class="medium txt-center txt-black">
               Don't have an accout? <br />
@@ -63,6 +69,8 @@
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
