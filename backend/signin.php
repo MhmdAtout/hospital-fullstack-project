@@ -2,51 +2,47 @@
 
 include('connection.php');
 
-if(isset($_POST["id"])){
-    $user_id = $_POST["id"];
+include('./vendor/autoload.php');
 
-    $query = $mysql -> prepare("SELECT * FROM `users` Where id = ? ");
-    $query -> bind_param("i", $user_id);
-    $query -> execute();
-    $result = $query->get_result();
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
-    while($object = $result -> fetch_assoc()){
-        $data = $object;
-    }
+$key = "mhmdHospital101";
 
+$email = $_POST["email"];
+$password = $_POST["password"];
+
+$hashed = hash("sha256", $password);
+$query = $mysql -> prepare("SELECT * FROM `users` WHERE `email`=? AND `password`=?");
+$query -> bind_param("ss", $email, $hashed);
+$query -> execute();
+$result = $query -> get_result();
+
+while($object = $result -> fetch_assoc()){
+    $data = $object;
+}
+
+if(isset($data)){
+    $payload = [
+        "id" => $data["id"],
+        "name" => $data["name"],
+        "email" => $data["email"],
+        "user_type" => $data["usertype_id"],
+    ];
+
+    $jwt = JWT::encode($payload, $key, 'HS256');
+    
     $response = [
-        "user" => $data
+        "id" => $data["id"],
+        "user_type" => $data["usertype_id"],
+        "access_token" => $jwt
     ];
 }else{
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $response =[
+        "message" => "Credentials are incorrect"
+    ];
+};
 
-    $hashed = hash("sha256", $password);
-
-    $query = $mysql -> prepare("SELECT * FROM `users` WHERE `email`=? AND `password`=?");
-    $query -> bind_param("ss", $email, $hashed);
-    $query -> execute();
-    $result = $query -> get_result();
-
-    while($object = $result -> fetch_assoc()){
-        $data = $object;
-    }
-
-    if(isset($data)){
-            $response = [
-                "id" => $data["id"],
-                "name" => $data["name"],
-                "email" => $data["email"],
-                "dob" => $data["dob"],
-                "gender" => $data["gender"],
-                "user_type" => $data["usertype_id"],
-            ];
-    }else{
-        $response =[
-            "message" => "Credentials are incorrect"
-        ];
-    };
-}
 
 echo json_encode($response);
 
