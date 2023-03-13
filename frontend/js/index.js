@@ -3,9 +3,9 @@ const home_btn = document.getElementById("home_btn");
 const home_page = document.getElementById("home_page");
 const signin_page = document.getElementById("signin_page");
 
-const email = document.getElementById("email");
-const password = document.getElementById("password");
 const login_btn = document.getElementById("login_btn");
+
+const error_msg = document.getElementById("error_msg");
 
 const baseURL = "http://localhost/hospital-fullstack-project/backend";
 
@@ -24,6 +24,8 @@ home_btn.addEventListener("click", () => {
 });
 
 login_btn.addEventListener("click", () => {
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
   const signin_body = new FormData();
   signin_body.append("email", email.value);
   signin_body.append("password", password.value);
@@ -34,15 +36,16 @@ login_btn.addEventListener("click", () => {
     data: signin_body,
   }).then((res) => {
     console.log(res.data);
+    localStorage.setItem("id", res.data.id);
+    localStorage.setItem("access_token", res.data.access_token);
     if (res.data.user_type == 3) {
       window.location.href = "./pages/patient.html";
-      localStorage.setItem("id", res.data.id);
     } else if (res.data.user_type == 2) {
       window.location.href = "./pages/employee.html";
-      localStorage.setItem("id", res.data.id);
-    } else {
+    } else if (res.data.user_type == 1) {
       window.location.href = "./pages/admin.html";
-      localStorage.setItem("id", res.data.id);
+    } else {
+      error_msg.innerText = res.data.message;
     }
   });
 });
