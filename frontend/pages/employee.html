@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/colors.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Employee</title>
+  </head>
+  <body>
+    <div class="wrapper flex jc-center ai-center">
+      <div class="sidebar flex column jc-start ai-start">
+        <div class="sidebar-title">
+          <p class="bold txt-blue">Hospitals</p>
+        </div>
+        <div id="home_icon" class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/dashboard.svg" alt="" />
+          <p class="bold txt-black">Home</p>
+        </div>
+        <div class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/download-grey.svg" alt="" />
+          <p class="regular txt-greyer">Invoice</p>
+        </div>
+        <div id="profile_icon" class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/profile-grey.svg" alt="" />
+          <p class="regular txt-greyer">Profile</p>
+        </div>
+        <div id="logout_icon" class="sidebar-element flex ai-center jc-center">
+          <img src="../assets/images/logout-grey.svg" alt="" />
+          <p class="regular txt-greyer">Logout</p>
+        </div>
+      </div>
+
+      <div class="page flex column jc-sb ai-start">
+        <div class="page-title">
+          <p class="txt-black bold">
+            Welcome, <span id="fill_name" class="txt-blue"></span>
+          </p>
+        </div>
+        <div id="page-content" class="page-content flex jc-start ai-center">
+          <div id="home_page" class="dashboard flex column jc-sa ai-center">
+            <div class="user flex column bold">
+              <label for="users_to_assign">Choose a patient</label>
+              <select
+                class="regular txt-black"
+                name="users_to_assign"
+                id="patient_to_assign"
+              ></select>
+            </div>
+            <div class="service flex column jc-center ai-center">
+              <div class="service-content flex column jc-center ai-center">
+                <div class="request flex column jc-sb ai-center">
+                  <div class="dropdown flex column">
+                    <label class="bold txt-black" for="service-request"
+                      >Choose a service</label
+                    >
+                    <select
+                      class="regular"
+                      name="service-request"
+                      id="available_services"
+                    ></select>
+                  </div>
+                  <div id="request_service_btn" class="service-btn">
+                    <button class="filled bg-blue btn bold">Add Servise</button>
+                  </div>
+                </div>
+                <div id="user_services" class="view"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="profile_page" class="profile hide column jc-sa ai-center">
+          <input id="name_input" type="text" placeholder="Name" disabled />
+          <input id="email_input" type="text" placeholder="Email" disabled />
+          <input id="dob_input" type="text" placeholder="DOB" disabled />
+          <button id="edit_profile_btn" class="filled btn bg-blue bold">
+            Edit
+          </button>
+          <p id="updateuser_msg"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/employee.js"></script>
+  </body>
+</html>
