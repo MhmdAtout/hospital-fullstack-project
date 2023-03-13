@@ -12,6 +12,10 @@ if($query -> execute()){
     $response = [
         "status" => "accepted"
     ];
+}else{
+    $response = [
+        "status" => "error"
+    ];
 }
 
 echo json_encode($response);
