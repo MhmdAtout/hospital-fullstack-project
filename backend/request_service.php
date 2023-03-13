@@ -30,5 +30,4 @@ if(isset($data)){
 
 echo json_encode($response);
 
-
 ?>
