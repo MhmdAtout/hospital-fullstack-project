@@ -14,7 +14,7 @@
         <div class="sidebar-title">
           <p class="bold txt-blue">Hospitals</p>
         </div>
-        <div class="sidebar-element flex ai-center jc-center">
+        <div id="home_icon" class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/dashboard.svg" alt="" />
           <p class="bold txt-black">Home</p>
         </div>
@@ -22,11 +22,11 @@
           <img src="../assets/images/download-grey.svg" alt="" />
           <p class="regular txt-greyer">Invoice</p>
         </div>
-        <div class="sidebar-element flex ai-center jc-center">
+        <div id="profile_icon" class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/profile-grey.svg" alt="" />
           <p class="regular txt-greyer">Profile</p>
         </div>
-        <div class="sidebar-element flex ai-center jc-center">
+        <div id="logout_icon" class="sidebar-element flex ai-center jc-center">
           <img src="../assets/images/logout-grey.svg" alt="" />
           <p class="regular txt-greyer">Logout</p>
         </div>
@@ -38,42 +38,51 @@
             Welcome, <span id="fill_name" class="txt-blue"></span>
           </p>
         </div>
-        <div class="page-content flex jc-center ai-center">
-          <div class="dashboard flex column jc-sb ai-center">
+        <div class="page-content flex jc-start ai-center">
+          <div id="home_page" class="dashboard flex jc-sa ai-center">
             <div class="service flex column jc-center ai-center">
-              <div class="service-title">
-                <p>Services</p>
-              </div>
-              <div class="service-content flex jc-center ai-center">
-                <div class="request flex jc-sb ai-center">
-                  <div class="dropdown">
-                    <label for="service-request">Choose a service</label>
+              <!-- <div class="service-title">
+                <p class="bold txt-blue">Services</p>
+              </div> -->
+              <div class="service-content flex column jc-center ai-center">
+                <div class="request flex column jc-sb ai-center">
+                  <div class="dropdown flex column">
+                    <label class="bold" for="service-request"
+                      >Choose a service</label
+                    >
                     <select
                       name="service-request"
                       id="available_services"
                     ></select>
                   </div>
                   <div id="request_service_btn" class="service-btn">
-                    <button>
-                      <img src="../assets/images/dashboard-grey.svg" alt="" />
-                    </button>
+                    <button class="filled bg-blue btn bold">Request</button>
                   </div>
                 </div>
-                <div id="user_services" class="view"></div>
+                <div id="user_services" class="view regular txt-black"></div>
               </div>
             </div>
 
             <div class="medication flex column jc-sb ai-center">
-              <label for="service-mdx">Choose medication</label>
+              <label class="bold txt-black" for="service-mdx"
+                >Choose medication</label
+              >
               <select name="service-mdx" id="available_medication"></select>
-              <button id="medication_btn">
-                <img src="../assets/images/dashboard-grey.svg" alt="" />
+              <button class="filled bg-blue btn bold" id="medication_btn">
+                Order
               </button>
             </div>
-            <div class="room flex column jc-center ai-center">psst</div>
           </div>
 
-          <div class="profile"></div>
+          <div id="profile_page" class="profile hide column jc-sb ai-center">
+            <input id="name_input" type="text" placeholder="Name" disabled />
+            <input id="email_input" type="text" placeholder="Email" disabled />
+            <input id="dob_input" type="text" placeholder="DOB" disabled />
+            <button id="edit_profile_btn" class="filled btn bg-blue bold">
+              Edit
+            </button>
+            <p id="updateuser_msg"></p>
+          </div>
         </div>
       </div>
     </div>
