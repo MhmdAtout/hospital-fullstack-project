@@ -8,3 +8,7 @@
 - Admin controlls requestes for services
 - Users can view their medication and order them
 - Users can veiw available services and request them
+
+### Landing Page
+
+<img src="./frontend/assets/images/landingpage.png">
