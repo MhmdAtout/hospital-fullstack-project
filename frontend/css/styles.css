@@ -122,8 +122,8 @@ img {
 }
 
 .btn {
-  width: 140px;
-  height: 40px;
+  padding: 10px 20px;
+  margin: 10px 5px;
   border-radius: 15px;
   font-size: 18px;
   cursor: pointer;
@@ -250,4 +250,25 @@ input::placeholder {
   width: 100%;
   height: 100%;
   padding: 50px;
+}
+
+.add-user > div {
+  margin: 20px 0;
+}
+
+.profile {
+  height: 200px;
+}
+
+.kpage {
+  height: 600px;
+  padding-top: 130px;
+}
+
+.requests_wrapper {
+  width: 100%;
+  flex-wrap: wrap;
+}
+.each-request {
+  width: 50%;
 }
